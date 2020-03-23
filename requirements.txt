@@ -4,3 +4,4 @@ discord.py== 1.3.2
 requests==2.22.0
 asyncio
 dnspython==1.16.0
+pyfiglet==0.8.post1
