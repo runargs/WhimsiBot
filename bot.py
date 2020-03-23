@@ -2,10 +2,11 @@ import discord, random, json, requests, math, asyncio
 from discord.ext import commands
 from pyfiglet import Figlet
 
-TOKEN = None
+import os
+TOKEN = os.environ.get("TOKEN")
 
-with open("token.txt") as f:
-    TOKEN = f.read().strip()
+# with open("token.txt") as f: #used for pulling token from local text
+#    TOKEN = f.read().strip()
 
 def mockMe(str):
     length = len(str)
