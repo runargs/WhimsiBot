@@ -105,14 +105,35 @@ async def inspire(ctx):
     await ctx.send(inspImg.text)
 
 @bot.command()
+async def activity(ctx):
+    activityUrl = "http://www.boredapi.com/api/activity?"
+    activityResp = requests.get(activityUrl, verify=True)
+    await ctx.send(activityResp.json()['activity'])
+
+@bot.command()
 async def quarantineActivities(ctx):
     activityUrl = "http://www.boredapi.com/api/activity?participants=1"
     activityResp = requests.get(activityUrl, verify=True)
     await ctx.send(activityResp.json()['activity'])
 
 @bot.command()
-async def activity(ctx):
-    activityUrl = "http://www.boredapi.com/api/activity?"
-    activityResp = requests.get(activityUrl, verify=True)
-    await ctx.send(activityResp.json()['activity'])
+async def covidStats(ctx):
+    covidUrl = "https://coronavirus-tracker-api.herokuapp.com/v2/latest"
+    covidResp = requests.get(covidUrl, verify=True)
+    usaUrl = "https://coronavirus-tracker-api.herokuapp.com/v2/locations?country_code=US"
+    usaResp = requests.get(usaUrl, verify=True)
+    covidStr = '''
+This data is sourced from Johns Hopkins University/Conference of State Bank Supervisors.
+Currently, there are {} confirmed cases. There are {} deaths, and {} recoveries.
+In the USA, there are {} confirmed cases, {} deaths, and {} recoveries.
+Stay safe, and keep your orfices free of viruses!
+    '''.format(
+    str(covidResp.json()['latest']['confirmed']),
+    str(covidResp.json()['latest']['deaths']),
+    str(covidResp.json()['latest']['recovered']),
+    str(usaResp.json()['latest']['confirmed']),
+    str(usaResp.json()['latest']['deaths']),
+    str(usaResp.json()['latest']['recovered']),
+    )
+    await ctx.send(covidStr)
 bot.run(TOKEN)

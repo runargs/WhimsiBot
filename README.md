@@ -1,6 +1,6 @@
 # 🤖 WhimsiBot, the Discord Bot
 
-A silly Discord bot that provides fun commands, even including suggesting activities to do during COVID-19 quarantine!
+A silly Discord bot that provides fun commands, especially made to help pass time while in quarantine due to COVID-19. *Necessity is the mother of all invention*, as they say.
 
 This is my first time
 
@@ -13,7 +13,7 @@ This is my first time
 
 Hope you enjoy.
 
-<img src="https://cdn.pixabay.com/photo/2019/06/22/14/42/robot-4291692_960_720.png" width="200"> 
+<img src="https://cdn.pixabay.com/photo/2019/06/22/14/42/robot-4291692_960_720.png" width="200">
 
 ## 🔗 Getting Started
 
