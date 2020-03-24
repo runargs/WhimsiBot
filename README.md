@@ -31,6 +31,7 @@ This project is deployed on Heroku using a GitHub connection.
 
 * `!activity` Suggests a random activity to do if you're bored
 * `!ascii <text>` Generates an ASCII art representation of the given text
+* `!covidStats` Will return the latest data about COVID-19 cases worldwide and in the USA
 * `!help` Shows available commands
 * `!inspire` Provides an inspiring AI generated image-quote
 * `!jeopardy` Displays a Jeopardy trivia question with a click-to-reveal answer
